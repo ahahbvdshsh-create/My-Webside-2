@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MH Mobile Banking | Fast & Secure Transactions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #00D632; /* Cash App Green */
+      --primary-dark: #00B32A;
+      --dark: #0F172A;
+      --dark-card: #1E293B;
+      --light: #F8FAFC;
+      --text-muted: #94A3B8;
+      --border: #334155;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background-color: var(--dark);
+      color: var(--light);
+      line-height: 1.6;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 2rem;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(8px);
+      z-index: 100;
+    }
+
+    .brand {
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    .brand span {
+      color: var(--primary);
+    }
+
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 3rem 0 4rem;
+    }
+
+    .hero h1 {
+      font-size: 2.75rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      color: var(--text-muted);
+      font-size: 1.15rem;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(0, 214, 50, 0.15);
+      color: var(--primary);
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+      border: 1px solid rgba(0, 214, 50, 0.3);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+
+    .card {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+    }
+
+    .card h2 {
+      font-size: 1.4rem;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    label {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      background: #0b1120;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--light);
+      font-size: 1rem;
+      outline: none;
+      transition: border 0.2s ease;
+    }
+
+    input:focus, select:focus {
+      border-color: var(--primary);
+    }
+
+    .btn {
+      display: inline-block;
+      width: 100%;
+      background: var(--primary);
+      color: #000;
+      font-weight: 600;
+      padding: 0.85rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.2s ease;
+    }
+
+    .btn:hover {
+      background: var(--primary-dark);
+    }
+
+    .features {
+      margin-top: 4rem;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .feature-item {
+      background: rgba(30, 41, 59, 0.5);
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      border-radius: 8px;
+    }
+ .feature-item h3 {
+      font-size: 1.1rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .feature-item p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: 5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand">MH <span>Mobile Banking</span></div>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#calculator">Fee Calculator</a>
+      <a href="#request">New Order</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="badge">Trusted Agent & Remittance Support</div>
+      <h1>Fast & Reliable Cash App Transactions</h1>
+      <p>Send, receive, and cash out funds seamlessly with MH Mobile Banking's dedicated transaction desk.</p>
+    </section>
+
+    <div class="grid">
+      <!-- Transaction Request Form -->
+      <div class="card" id="request">
+        <h2>Submit Transaction Request</h2>
+        <form id="txForm">
+          <div class="form-group">
+            <label for="txType">Transaction Type</label>
+            <select id="txType" required>
+              <option value="cash_in">Cash In / Deposit</option>
+              <option value="cash_out">Cash Out / Withdrawal</option>
+              <option value="p2p">Direct Transfer (Send)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="cashtag">Cash App $Cashtag / Account ID</label>
+            <input type="text" id="cashtag" placeholder="$yourcashtag" required />
+          </div>
+
+          <div class="form-group">
+            <label for="amount">Amount (USD)</label>
+            <input type="number" id="amount" placeholder="0.00" min="5" step="0.01" required />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Contact Number / WhatsApp</label>
+            <input type="tel" id="phone" placeholder="+1 (555) 000-0000" required />
+          </div>
+
+          <button type="submit" class="btn">Proceed with Agent</button>
+        </form>
+      </div>
+
+      <!-- Live Fee Calculator -->
+      <div class="card" id="calculator">
+        <h2>Fee Estimator</h2>
+        <div class="form-group">
+          <label for="calcAmount">Enter Amount to Calculate</label>
+          <input type="number" id="calcAmount" placeholder="100.00" min="1" />
+        </div>
+
+        <div style="margin-top: 1.5rem; border-top: 1px solid var(--border); padding-top: 1rem;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+            <span style="color: var(--text-muted);">Standard Agent Fee (1.5%):</span>
+            <span id="feeAmount">0.00 USD</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; margin-bottom: 1rem; font-weight: 600;">
+            <span>Estimated Total:</span>
+            <span id="totalAmount" style="color: var(--primary);">0.00 USD</span>
+          </div>
+          <p style="font-size: 0.8rem; color: var(--text-muted);">
+            *Rates may vary depending on local processing requirements. Confirm final amounts with your MH Mobile Banking representative.
+          </p>
+        </div>
+      </div>
+    </div>
+<!-- Features -->
+    <section class="features" id="services">
+      <h2 style="font-size: 1.5rem; text-align: center;">Why Transact with MH Mobile Banking?</h2>
+      <div class="features-grid">
+        <div class="feature-item">
+          <h3>Instant Processing</h3>
+          <p>Direct verification and settlement via authorized agent channels.</p>
+        </div>
+        <div class="feature-item">
+          <h3>Transparent Rates</h3>
+          <p>No hidden fees. Upfront calculation before committing any transaction.</p>
+        </div>
+        <div class="feature-item">
+          <h3>Dedicated Assistance</h3>
+          <p>Direct human verification via phone/WhatsApp for your peace of mind.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 MH Mobile Banking. All rights reserved.</p>
+    <p style="margin-top: 0.5rem;">Disclaimer: MH Mobile Banking is an independent service provider facilitating digital mobile transactions.</p>
+  </footer>
+
+  <script>
+    // Live fee calculator
+    const calcInput = document.getElementById('calcAmount');
+    const feeDisplay = document.getElementById('feeAmount');
+    const totalDisplay = document.getElementById('totalAmount');
+
+    function updateCalculator() {
+      const val = parseFloat(calcInput.value) || 0;
+      const fee = val * 0.015;
+      const total = val + fee;
+
+      feeDisplay.textContent = fee.toFixed(2) + ' USD';
+      totalDisplay.textContent = total.toFixed(2) + ' USD';
+    }
+
+    calcInput.addEventListener('input', updateCalculator);
+
+    // Form submission mock handler
+    document.getElementById('txForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const cashtag = document.getElementById('cashtag').value;
+      const amount = document.getElementById('amount').value;
+      alert(Request initiated for ${cashtag} for amount ${amount} USD. An MH Mobile Banking agent will contact you shortly.);
+      this.reset();
+    });
+  </script>
+</body>
+</html>
